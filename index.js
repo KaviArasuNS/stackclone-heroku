@@ -60,6 +60,27 @@ app.post("/movies", express.json(), async function(request,response){
 })
 
 
+// Hackathon 2 Database
+
+app.get('/stack', async function (req, res) {
+
+
+  const  mobiles = await client.db("guvi").collection("stack").find({}).toArray();
+  
+  res.send(mobiles)
+})
+
+
+app.post('/stack', express.json(), async function (req, res){
+  const data = req.body;
+  console.log(data);
+  const result = await client.db("guvi").collection("stack").insertMany(data);
+  res.send(result);
+})
+
+
+
+
 
 
 
