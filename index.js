@@ -10,7 +10,7 @@ const app = express()
 dotenv.config();
 console.log(process.env.MONGO_URL);
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 
 
