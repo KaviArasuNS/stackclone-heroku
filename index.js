@@ -59,7 +59,7 @@ app.post('/companies', async function (req, res){
 
 app.get('/companies', async function (req, res) {
 
-  const  result = await client.db("guvi").collection("stack").find({}).toArray();
+  const  result = await client.db("guvi").collection("companies").find({}).toArray();
   console.log(result);
   res.send(result);
 })
